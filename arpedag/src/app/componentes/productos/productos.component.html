@@ -1,0 +1,133 @@
+<section class="prod my-5 mx-5 d-flex justify-content-between">
+  <p>Hola, Bienvenido!!! {{nombreProducto}}!</p>
+
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal"
+    (click)="mostrarModalAgregar()">
+    <i class="bi bi-plus-circle-fill"></i>
+    Agregar Producto
+  </button>
+</section>
+<div class="buscador w-75 my-5 mx-5">
+  <form class="d-flex" role="search" (ngSubmit)="buscador()">
+    <input class="form-control me-2" type="search" 
+    placeholder="Buscar" aria-label="Search" 
+    name="termino"
+    [(ngModel)]="buscar.termino"/>
+    <button class="btn btn-outline-success" type="submit">Buscador</button>
+  </form>
+</div>
+<section>
+  @if (contenidoParaMostrar.length) {
+  <ol class="list-group list-group-numbered">
+   
+    @for (producto of contenidoParaMostrar; track producto._id) {
+    
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+
+      <img class="diseno" src="../../../assets/copita.jpg" alt="Diseño">
+      <div>   
+      <div>Producto:{{ producto.nombre}}</div>
+      <div>Tipo:{{ producto.tipo}}</div>
+      <div>Código:{{ producto.codigo}}</div>
+      <div>Disponible: 
+        @if (producto.disponible){
+          Sí       
+         } @else{No}
+        </div>
+      </div>
+      <div class="btn-group btn" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-success bi bi-book-half" 
+          data-bs-toggle="modal" data-bs-target="#modal"
+          (click)="mostrarModalVer(producto._id)">
+           
+        </button>
+        <button type="button" class="btn btn-warning bi bi-pen" 
+          data-bs-toggle="modal" data-bs-target="#modal"
+          (click)="mostrarModalEditar(producto)">
+           
+        </button>
+        <button type="button" class="btn btn-danger bi bi-trash"
+          data-bs-toggle="modal" data-bs-target="#modal"
+          (click)="mostrarModalEliminar(producto._id)">  
+      </button>
+      </div>
+    </li>
+    }
+  </ol>
+  }@else {
+  <div class="alert alert-info" role="alert">No existen registros.</div>
+  }
+</section>
+<section>
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalLabel">{{modalTitulo}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            (click)="restablecerPropiedades()"></button>
+        </div>
+        <div class="modal-body">
+          @if (modalBoton === "Crear") {
+          <div>
+            <input type="text" placeholder="Producto" [(ngModel)]="producto.nombre" />
+          </div>
+          <div>
+            <input type="text" placeholder="Tipo" [(ngModel)]="producto.tipo" />
+          </div>
+          <div>
+            <input type="text" placeholder="Codigo" [(ngModel)]="producto.codigo" />
+          </div>
+          <div>
+            <label for="disponible"> ¿Está disponible?</label>
+            <input type="checkbox" id="disponible" [(ngModel)]="producto.disponible" />
+          </div>
+
+          }@if (modalBoton === "Ver") {
+          <div>
+            Este producto {{ producto._id }} , {{producto.tipo }}
+             {{producto.codigo}}, {{ producto.disponible? "no":"si"}} está disponible?
+          </div>
+          }@if (modalBoton==="Actualizar") {
+          <div>
+            <input type="text" placeholder={{productoInicial.nombre}} [(ngModel)]="producto.nombre" />
+          </div>
+          <div>
+            <input type="text" placeholder= {{productoInicial.tipo}}  [(ngModel)]="producto.tipo" />
+          </div>
+          <div>
+            <input type="text" placeholder= {{productoInicial.codigo}}  [(ngModel)]="producto.codigo" />
+          </div>
+          <div>
+            <label for="disponible"> ¿Está disponible?</label>
+            <input type="checkbox" id="disponible" [(ngModel)]="producto.disponible" />
+          </div>
+          }@if(modalBoton=== "Eliminar") {
+          <div> Desea eliminar éste registro?:{{productoId}}</div>
+          }
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="restablecerPropiedades()">
+            Cerrar
+          </button>
+          <button type="button" class="btn btn-{{modalColorBoton}}" [disabled]="modalBoton === 'Ver'"
+            (click)="manejarAccion()" data-bs-dismiss="modal">
+            {{ modalBoton }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+  <footer>
+    <div class="card text-center" style="width:100%">
+      <div class="card-footer">
+        <h5 class="card-title"> Chocolates Arpedag</h5>
+        <p class="card-text"> Productos de alta calidad... 100% limpio, natural y orgánico.</p>
+        <a href="#" class="btn btn-warning"> Más Información</a>
+      </div>
+      
+    </div>
+  </footer>  
+

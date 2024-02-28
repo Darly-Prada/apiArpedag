@@ -1,0 +1,25 @@
+.registro{
+    margin: auto;
+   background: -webkit-linear-gradient(90deg, rgb(59, 18, 1) 10%, rgb(54, 45, 28) 90%);
+     border-radius: 3%;
+    color: #883e09;
+    padding: 12px 28px;
+}
+h1{
+    color: #883e09;
+    padding: 24px;
+    margin: 18px auto;
+}
+
+.btn{
+    background-color: #c78408
+
+}
+
+::placeholder{
+    border-radius: 3%;
+    color: #837d78;
+    font-size: 14px;
+    background-color: #f0daca;
+ 
+}

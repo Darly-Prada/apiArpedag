@@ -1,0 +1,167 @@
+/*font-family: 'Aclonica', sans-serif; 
+font-family: 'Abril Fatface', serif; */
+
+h1{ 
+    color: #883e09;
+    cursor: pointer;
+    margin: auto;
+    font-weight: bold;
+    font-size: 42px; 
+    font-family: 'Aclonica', sans-serif;
+    
+}
+h1:hover{
+    transform: scale(1.2); 
+    transition-duration: 2s;
+    color:#c78408;
+}
+h2{ color: #883e09;
+    font-weight: bold;
+    font-size: 32px; 
+    font-family: 'Aclonica', sans-serif;
+    cursor: pointer;
+}
+h2:hover{
+    transform: scale(1.2); 
+    transition-duration: 2s;
+    color:#c78408;
+}
+
+h5{ color: #883e09;
+    font-weight: bold;
+}
+
+
+
+.carousel-inner{
+    max-height: 38rem;
+
+}
+.carousel-caption{
+    margin-bottom: 250px;
+
+  }
+.carousel-item{
+    height: auto;
+  }
+.caru-h5{
+    color:#c78408;
+    padding: 12px; 
+
+}
+h3{
+    color: #883e09;
+    align-content: center;
+}
+h3:hover{
+    color:#c78408;
+    transition-duration: 2s;
+}
+
+.logo{
+    border-radius:15%;
+    box-shadow: -2px -4px 4px 4px #883e09;
+    padding-bottom: 12px;
+}
+li{
+    color: whitesmoke;
+    font-family: 'Aclonica', sans-serif; 
+}
+.sobreNosotros{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin: 6px;
+    padding: 12px;
+     
+}
+
+.texto{
+    font-size: 14px;
+}
+
+.nos{
+    width: 80%;
+    flex-direction: column;
+    margin: auto;
+    height: 300px;
+}
+figure{
+    display: flex;
+    margin: 12px auto;       
+}
+.img1{  
+    margin-bottom:6px;
+    border-radius: 5%;
+    align-content: center;   
+}
+.img2{  
+    margin-bottom:6px;
+    border-radius: 5%;
+    align-content: center;
+    
+}
+.iframe{
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+    align-items: center;
+
+}
+.iframe-ifr{
+  margin: 2px 6px;
+}
+
+@media (max-width: 600px) {
+
+ .header{
+    flex-direction: column;
+    
+    }
+
+    .logo{
+        width:50%;
+        justify-content: center;
+    }
+    h1{
+        display: none;
+    }
+    .iframe{
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+  }
+.iframe-ifr{
+  display: none;
+ 
+  }
+}
+footer{  
+   
+    margin: 2px;
+    padding: 6px;
+}
+.card{
+    
+    box-shadow: -2px -2px 2px 2px #883e09; 
+    background-color: none;
+}
+
+.btn{
+    flex-direction: column;
+    background-color: #c78408;
+    height: auto;
+    color: whitesmoke;
+    padding: 10px;
+}
+.btn:hover{
+    transform: scale(1.2); 
+    transition-duration: 3s;
+    color: #883e09; 
+}
+
+
+
+
+
+

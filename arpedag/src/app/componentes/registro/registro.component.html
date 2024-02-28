@@ -1,0 +1,47 @@
+
+<h1>Por favor Registrese para iniciar Sesión</h1>
+
+<form  class="registro w-50 "[formGroup]="formularioRegistro" (ngSubmit)="manejarEnvio()" >
+    <div class="mb-3" m-auto>
+        <label for="usuario" class="form-label">Usuario</label>
+        <input type="text" 
+        class="form-control" 
+        id="usuario"
+        aria-describedby="usuario"
+        placeholder="Ingresa Usuario" required
+        formControlName= "usuario"/>
+      </div>
+
+      <div class="mb-3" m-auto>
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" 
+        class="form-control" 
+        id="nombre"
+        aria-describedby="nombre"
+        placeholder="Ingresa Nombre" required
+        formControlName= "nombre"/>
+      </div>
+
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" 
+      id="correo"
+      placeholder="ingresa correo electrónico"
+      formControlName="correo"/>
+    </div>   
+
+    <div class="mb-3">
+      <label for="contrasenia" class="form-label">Contraseña</label>
+      <input type="password" 
+      class="form-control" 
+      id="contrasenia"
+      placeholder="Ingresa Contraseña"
+      formControlName="contrasenia"/>
+    </div>
+  
+    <button type="submit" 
+      class="btn btn-primary" 
+      [disabled]="!formularioRegistro.valid">
+      Registrarse
+    </button>
+    </form>

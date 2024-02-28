@@ -1,0 +1,51 @@
+  
+  <nav class="navbar navbar-expand-lg justify-content-center">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light fs-2" href="#">Arpedag</a>
+        <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a routerLink="inicio" class="nav-link p-4 fs-5" aria-current="page">Inicio</a>
+                </li>                           
+                    @if(logueoService.inicioLogueo()) {
+                      <button
+                        type="button"
+                        class="btn btn-link nav-item p-4 fs-5"
+                        (click)="logueoService.cerrarLogueo()"
+                      > Cerrar sesión
+                      </button>
+
+                      <li class="nav-item"> 
+                      <a  routerLink="productos" class="nav-link p-4 fs-5"> Productos</a>
+                    </li>
+                    } @else {
+                        <li class="nav-item">
+                        <a routerLink="logueo" class="nav-link p-4 fs-5">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="registro" class="nav-link p-4 fs-5"> Registro</a>
+                        </li>         
+                    }               
+             </ul>
+            <form class="d-flex redes"  role="search">
+
+                 <div class="bi bi-envelope-at-fill"></div> 
+                 <div class="bi bi-instagram"></div>  
+                 <div class="bi bi-linkedin"></div> 
+                 <div class=" bi bi-facebook"></div> 
+                 <div class="bi bi-whatsapp"></div> 
+
+                <button class="boton" 
+                type="button"><a class="navbar-brand text-light fs-5 mx-2 " href="#">Saber Más</a>
+            </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
