@@ -24,8 +24,19 @@
     
     <li class="list-group-item d-flex justify-content-between align-items-center">
 
-      <img class="diseno" src="../../../assets/copita.jpg" alt="Diseño">
-      <div>   
+      @if(producto.nombre=== "Bolsa" || producto.nombre ==="bolsa"){
+        <img class="diseno" src="../../../assets/bolsita.jpg" alt="Diseño">
+       }  
+    
+       @else if(producto.nombre=== "Tarro" || producto.nombre ==="tarro"){
+        <img class="diseno" src="../../../assets/tarro.jpg" alt="Diseño">
+       }  
+
+       @else if(producto.nombre=== "Caja" || producto.nombre ==="caja"){
+        <img class="diseno" src="../../../assets/cajita.jpg" alt="Diseño">
+       }   
+
+      <form type="text">   
       <div>Producto:{{ producto.nombre}}</div>
       <div>Tipo:{{ producto.tipo}}</div>
       <div>Código:{{ producto.codigo}}</div>
@@ -34,7 +45,7 @@
           Sí       
          } @else{No}
         </div>
-      </div>
+      </form>
       <div class="btn-group btn" role="group" aria-label="Basic mixed styles example">
         <button type="button" class="btn btn-success bi bi-book-half" 
           data-bs-toggle="modal" data-bs-target="#modal"
@@ -70,7 +81,7 @@
         <div class="modal-body">
           @if (modalBoton === "Crear") {
           <div>
-            <input type="text" placeholder="Producto" [(ngModel)]="producto.nombre" />
+            <input type="text" placeholder="Producto"  [(ngModel)]="producto.nombre" />
           </div>
           <div>
             <input type="text" placeholder="Tipo" [(ngModel)]="producto.tipo" />
@@ -103,7 +114,7 @@
             <input type="checkbox" id="disponible" [(ngModel)]="producto.disponible" />
           </div>
           }@if(modalBoton=== "Eliminar") {
-          <div> Desea eliminar éste registro?:{{productoId}}</div>
+          <div> Desea eliminar éste registro?:{{producto.nombre}}</div>
           }
         </div>
         <div class="modal-footer">

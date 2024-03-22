@@ -139,6 +139,7 @@ nombreProducto: string = '';
     this.modalTitulo = "¿Eliminar registro?";
     this.modalBoton ="Eliminar";
     this.modalColorBoton = 'danger';
+    
    
   }
   // revisando leerTodos 
@@ -183,6 +184,7 @@ console.log(productoencontrado)
 console.log(this.todosLosProductos)
   this.contenidoParaMostrar = productoencontrado;
 }
+
 }
 
 

@@ -6,7 +6,7 @@
     padding: 12px 28px;
 }
 h1{
-    color: #883e09;
+    color: whitesmoke;
     padding: 24px;
     margin: 18px auto;
 }
@@ -15,11 +15,8 @@ h1{
     background-color: #c78408
 
 }
-
 ::placeholder{
     border-radius: 3%;
-    color: #837d78;
-    font-size: 14px;
-    background-color: #f0daca;
- 
+    color: #bd8862;
+    font-size: 14px; 
 }
