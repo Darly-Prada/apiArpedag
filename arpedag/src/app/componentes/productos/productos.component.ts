@@ -139,8 +139,7 @@ nombreProducto: string = '';
     this.modalTitulo = "¿Eliminar registro?";
     this.modalBoton ="Eliminar";
     this.modalColorBoton = 'danger';
-    
-   
+      
   }
   // revisando leerTodos 
   obtenerTodos() {

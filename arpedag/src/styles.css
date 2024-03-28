@@ -23,10 +23,14 @@ body{
     background-size: cover; 
 }
 p{
-    color: whitesmoke;
+    
     font-family: 'Aclonica', sans-serif; 
     font-size: 14px;
 }
 .card{
-    background-color: #311600;
+    background-color: #f6d0b1;
+    color: #883e09;
+}
+a{
+    color: #883e09;
 }

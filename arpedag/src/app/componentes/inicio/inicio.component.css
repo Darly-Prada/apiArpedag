@@ -54,6 +54,7 @@ h3:hover {
 }
 li {
   color: whitesmoke;
+  background-color: #e6d0be;
   font-family: "Aclonica", sans-serif;
 }
 .logo {
@@ -69,7 +70,10 @@ li {
   padding: 12px;
 }
 .texto {
+  color: #883e09;
   font-size: 14px;
+  background-color: #e6d0be;
+
 }
 .nos {
   width: 80%;

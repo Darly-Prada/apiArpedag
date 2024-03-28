@@ -1,5 +1,6 @@
 import { Injectable,inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Productos } from '../interface/productos';
  
 
@@ -9,7 +10,7 @@ import { Productos } from '../interface/productos';
 export class ProductosService {
   constructor() {}
 
-  API_URL:string = "http://localhost:3500/productos";
+  API_URL:string = "http://localhost:4100/productos";
   httpClient = inject(HttpClient);
 
 // creo todas las funciones crud 
